@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.数组：定义： 数据类型 数组名[数组大小]；  赋初值 a[0] a[1]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-31T06:54:39.000Z">
-<meta property="article:modified_time" content="2021-10-31T07:24:03.781Z">
+<meta property="article:modified_time" content="2021-10-31T08:30:50.738Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
       
         <h2 id="1-数组："><a href="#1-数组：" class="headerlink" title="1.数组："></a>1.数组：</h2><p><font size=4>定义： 数据类型 数组名[数组大小]；  赋初值 a[0] a[1]</font></p>
 <span id="more"></span>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="keyword">double</span> hens[<span class="number">6</span>];</span><br><span class="line"> 	<span class="keyword">double</span> sum=<span class="number">0.0</span>,avg=<span class="number">0.0</span>;</span><br><span class="line"> 	<span class="keyword">int</span> i,arrlen;</span><br><span class="line"> 	hens[<span class="number">0</span>]=<span class="number">6</span>;</span><br><span class="line"> 	hens[<span class="number">1</span>]=<span class="number">3.5</span>;</span><br><span class="line"> 	hens[<span class="number">2</span>]=<span class="number">4.2</span>;</span><br><span class="line"> 	hens[<span class="number">3</span>]=<span class="number">3.7</span>;</span><br><span class="line"> 	hens[<span class="number">4</span>]=<span class="number">5.2</span>;</span><br><span class="line"> 	hens[<span class="number">5</span>]=<span class="number">3.8</span>;</span><br><span class="line"> 	arrlen=<span class="keyword">sizeof</span>(hens)/<span class="keyword">sizeof</span>(<span class="keyword">double</span>);<span class="comment">//sizeof(hens)数组总分大小</span></span><br><span class="line"> 	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;				 	<span class="comment">//返回一个double字节</span></span><br><span class="line"> 		sum+=hens[i];</span><br><span class="line"> 	&#125;avg=sum/arrlen;</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;%.2f\n%.2f\n&quot;</span>,sum,avg);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	<span class="keyword">double</span> hens[<span class="number">6</span>];</span><br><span class="line"> 	<span class="keyword">double</span> sum=<span class="number">0.0</span>,avg=<span class="number">0.0</span>;</span><br><span class="line"> 	<span class="keyword">int</span> i,arrlen;</span><br><span class="line"> 	hens[<span class="number">0</span>]=<span class="number">6</span>;</span><br><span class="line"> 	hens[<span class="number">1</span>]=<span class="number">3.5</span>;</span><br><span class="line"> 	hens[<span class="number">2</span>]=<span class="number">4.2</span>;</span><br><span class="line"> 	hens[<span class="number">3</span>]=<span class="number">3.7</span>;</span><br><span class="line"> 	hens[<span class="number">4</span>]=<span class="number">5.2</span>;</span><br><span class="line"> 	hens[<span class="number">5</span>]=<span class="number">3.8</span>;</span><br><span class="line"> 	arrlen=<span class="keyword">sizeof</span>(hens)/<span class="keyword">sizeof</span>(<span class="keyword">double</span>);<span class="comment">//sizeof(hens)数组总分大小</span></span><br><span class="line"> 	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;	 <span class="comment">//返回一个double字节</span></span><br><span class="line"> 		sum+=hens[i];</span><br><span class="line"> 	&#125;avg=sum/arrlen;</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;%.2f\n%.2f\n&quot;</span>,sum,avg);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li><font size=4>数组名代表数组首地址 即a[0]</font></li>
 <li><font size=4>各个元素连续分布，地址加字节数依次类推</font></li>
@@ -257,9 +257,9 @@ var _hmt = _hmt || [];
 <ol>
 <li><font size=4>从第一个字符开始输出，直到遇到\0，表示该字符串结束</font></li>
 <li><font size=4></font><ul>
-<li><font size=4>(1)如果在给某个字符数组赋值时，赋给的元素个数小于该数组的长度，则会自动在后面加’\0’，表示字符串接收。</font></li>
-<li><font size=4>(2)赋给的元素的个数等于该数组的长度则不会自动添加’\0’。</font></li>
-<li><font size=4>(3)char str2[]=这种不会自动添加’\0’</font></li>
+<li><font size=4>如果在给某个字符数组赋值时，赋给的元素个数小于该数组的长度，则会自动在后面加’\0’，表示字符串接收。</font></li>
+<li><font size=4>赋给的元素的个数等于该数组的长度则不会自动添加’\0’。</font></li>
+<li><font size=4>char str2[]=这种不会自动添加’\0’</font></li>
 </ul>
 </li>
 </ol>
@@ -547,11 +547,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>
