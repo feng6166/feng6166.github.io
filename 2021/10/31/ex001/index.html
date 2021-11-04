@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>6.C语言_数组02 | 叶如晦</title>
+  <title>1.C语言_将字符串转换为一个整数 | 叶如晦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.冒泡排序法：通过对待排序序列从前到后(从下标较小的元素开始)，依次比较相邻元素的值，若发现逆序则交换，使数值较大的元素逐渐从前移向后部，像水底的气泡一样逐渐向上冒">
+  <meta name="description" content="1 题目 函数：fun() 功能：将字符串转换为一个整数描述： 【不能使用C语言提供的字符串函数】 输入：字符串”-1234” 输出：整型 -1234  2 思路思路：将字符串每个位置的字符进行对应的ASCII码转换 例如：字符 ‘0’-‘9’ 对应的十进制整数是48~57，那么，将对应的整数减去48就得到了对应的整数    二进制 十进制 十六进制 字符    0011 0000 48 30 0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6.C语言_数组02">
-<meta property="og:url" content="http://example.com/2021/10/31/Cfile05/index.html">
+<meta property="og:title" content="1.C语言_将字符串转换为一个整数">
+<meta property="og:url" content="http://example.com/2021/10/31/ex001/index.html">
 <meta property="og:site_name" content="叶如晦">
-<meta property="og:description" content="1.冒泡排序法：通过对待排序序列从前到后(从下标较小的元素开始)，依次比较相邻元素的值，若发现逆序则交换，使数值较大的元素逐渐从前移向后部，像水底的气泡一样逐渐向上冒">
+<meta property="og:description" content="1 题目 函数：fun() 功能：将字符串转换为一个整数描述： 【不能使用C语言提供的字符串函数】 输入：字符串”-1234” 输出：整型 -1234  2 思路思路：将字符串每个位置的字符进行对应的ASCII码转换 例如：字符 ‘0’-‘9’ 对应的十进制整数是48~57，那么，将对应的整数减去48就得到了对应的整数    二进制 十进制 十六进制 字符    0011 0000 48 30 0">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-10-31T08:09:47.000Z">
-<meta property="article:modified_time" content="2021-10-31T08:22:52.847Z">
+<meta property="article:published_time" content="2021-10-31T06:54:39.000Z">
+<meta property="article:modified_time" content="2021-11-04T02:37:53.499Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="C语言88案例">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="叶如晦" type="application/atom+xml">
@@ -211,44 +211,117 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Cfile05" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ex001" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      6.C语言_数组02
+      1.C语言_将字符串转换为一个整数
     </h1>
   
 
         
-        <a href="/2021/10/31/Cfile05/" class="archive-article-date">
-  	<time datetime="2021-10-31T08:09:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-31</time>
+        <a href="/2021/10/31/ex001/" class="archive-article-date">
+  	<time datetime="2021-10-31T06:54:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-冒泡排序法："><a href="#1-冒泡排序法：" class="headerlink" title="1.冒泡排序法："></a>1.冒泡排序法：</h2><p><font size=4>通过对待排序序列从前到后(从下标较小的元素开始)，依次比较相邻元素的值，若发现逆序则交换，使数值较大的元素逐渐从前移向后部，像水底的气泡一样逐渐向上冒</font></p>
-<span id="more"></span>
+        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
+<p>函数：fun()</p>
+<p>功能：将字符串转换为一个整数<br>描述：</p>
+<p>【不能使用C语言提供的字符串函数】</p>
+<p>输入：字符串”-1234”</p>
+<p>输出：整型 -1234</p>
+</blockquote>
+<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2 思路"></a>2 思路</h2><p>思路：将字符串每个位置的字符进行对应的ASCII码转换</p>
+<p>例如：字符 ‘0’-‘9’ 对应的十进制整数是48~57，那么，将对应的整数减去48就得到了对应的整数</p>
+<table>
+<thead>
+<tr>
+<th>二进制</th>
+<th>十进制</th>
+<th>十六进制</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0011 0000</td>
+<td>48</td>
+<td>30</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0011 0001</td>
+<td>49</td>
+<td>31</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0011 0010</td>
+<td>50</td>
+<td>32</td>
+<td>2</td>
+</tr>
+<tr>
+<td>0011 0011</td>
+<td>51</td>
+<td>33</td>
+<td>3</td>
+</tr>
+<tr>
+<td>0011 0100</td>
+<td>52</td>
+<td>34</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0011 0101</td>
+<td>53</td>
+<td>35</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0011 0110</td>
+<td>54</td>
+<td>36</td>
+<td>6</td>
+</tr>
+<tr>
+<td>0011 0111</td>
+<td>55</td>
+<td>37</td>
+<td>7</td>
+</tr>
+<tr>
+<td>0011 1000</td>
+<td>56</td>
+<td>38</td>
+<td>8</td>
+</tr>
+<tr>
+<td>0011 1001</td>
+<td>57</td>
+<td>39</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：fun()</span></span><br><span class="line"><span class="comment">功能：将字符串转换为一个整数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">描述：</span></span><br><span class="line"><span class="comment">【不能使用C语言提供的字符串函数】</span></span><br><span class="line"><span class="comment">输入：字符串&quot;-1234&quot;</span></span><br><span class="line"><span class="comment">输出：整型 -1234</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> *p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> r = <span class="number">0</span>;		<span class="comment">//数字个数</span></span><br><span class="line">	<span class="keyword">long</span> res = <span class="number">0L</span>;	<span class="comment">// 转化后的数字</span></span><br><span class="line">	<span class="keyword">int</span> pos = <span class="number">1</span>;		<span class="comment">// 位数*10 *100 ...</span></span><br><span class="line">	<span class="keyword">int</span> size = <span class="built_in">strlen</span>(p); 	<span class="comment">// 字符串长度</span></span><br><span class="line">	<span class="keyword">if</span> (p[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)&#123;</span><br><span class="line">		r = size - <span class="number">1</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		r = size;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 从前往后转换的话，需要分情况去计算。即：不是负数的话从p[0] 和 如果是负数的话需要从p[1]开始</span></span><br><span class="line">	<span class="comment">// 所以，可以从后往前计算，循环次数是 r </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; r; ++i) &#123;</span><br><span class="line">		res += (p[size<span class="number">-1</span>-i]<span class="number">-48</span>)*pos;</span><br><span class="line">		pos *= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> p[<span class="number">0</span>]==<span class="string">&#x27;-&#x27;</span>?-res:res; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">6</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Enter a string: &quot;</span>);</span><br><span class="line">	gets(s);</span><br><span class="line">	<span class="keyword">long</span> res = fun(s);	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Convert Result: %ld\n&quot;</span>, res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[]=&#123;<span class="number">3</span>,<span class="number">7</span>,<span class="number">-5</span>,<span class="number">6</span>,<span class="number">9</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">int</span> t=<span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;t;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;t-i;j++)</span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">				k=a[j];</span><br><span class="line">				a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">				a[j+<span class="number">1</span>]=k;</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;t;i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex1.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">Enter a string: -1234</span><br><span class="line">Convert Result: -1234</span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">Enter a string: 9089</span><br><span class="line">Convert Result: 9089</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-顺序查找："><a href="#2-顺序查找：" class="headerlink" title="2.顺序查找："></a>2.顺序查找：</h2><p><font size=4>从键盘输入一个数，判断数列中是否包含该数</font><br><font size=4>如果找到了提示找到，并给出下表值，找不到提示没有</font><br><font size=4>思路：按照数组进行遍历，一个个比较，如果相等，则找到</font></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">b</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> arrLen,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arrLen;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i]==val)</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">	&#125;<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[]=&#123;<span class="number">23</span>,<span class="number">1</span>,<span class="number">34</span>,<span class="number">89</span>,<span class="number">101</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> arrLen=<span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">	<span class="keyword">int</span> a=b(arr,arrLen,<span class="number">101</span>);</span><br><span class="line">	<span class="keyword">if</span>(a!=<span class="number">-1</span>)<span class="comment">//找到</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-二分查找："><a href="#3-二分查找：" class="headerlink" title="3.二分查找："></a>3.二分查找：</h2><p><font size=4>二分查找前提，该数组是一个有序数组</font><br><font size=4>输入一个数看看该数组是否存在此数，求出下标，如果没有提示没有这个数</font><br><font size=4>思路：需要查找的数是B</font><br><font size=4>先找到数组中间的这个数A和B进行比较</font><br><font size=4>如果A&gt;B 说明B在A左边</font><br><font size=4>如果A&lt;B 说明B在A右边</font><br><font size=4>如果A==B 说明找到</font></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">a</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> leftnumber,<span class="keyword">int</span> rightnumber,<span class="keyword">int</span> number)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b=(leftnumber+rightnumber)/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> c=arr[b];</span><br><span class="line">	<span class="keyword">if</span>(leftnumber&gt;rightnumber)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(c&gt;number)</span><br><span class="line">		a(arr,leftnumber,b<span class="number">-1</span>,number);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(c&lt;number)</span><br><span class="line">		a(arr,b+<span class="number">1</span>,rightnumber,number);</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[]=&#123;<span class="number">1</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">89</span>,<span class="number">1000</span>,<span class="number">1234</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> arrLen=<span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">	<span class="keyword">int</span> d=a(arr,<span class="number">0</span>,arrLen<span class="number">-1</span>,<span class="number">1000</span>);</span><br><span class="line">	<span class="keyword">if</span>(d!=<span class="number">-1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,d);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-二维数组案例："><a href="#5-二维数组案例：" class="headerlink" title="5.二维数组案例："></a>5.二维数组案例：</h2><p><font size=4>定义二维数组，用于保存三个班，每个班五名同学成绩，并求出每个班平均分，以及所有班级pjunf</font><br><font size=4>分析： 1.创建一个scores[3][5]  2.遍历，给赋值   3.再次遍历，统计总分和平均分  4.输出</font></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">double</span> score[<span class="number">3</span>][<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span> rows=<span class="keyword">sizeof</span>(score)/<span class="keyword">sizeof</span>(score[<span class="number">0</span>]),cols=<span class="keyword">sizeof</span>(score[<span class="number">0</span>])/<span class="keyword">sizeof</span>(<span class="keyword">double</span>),i,j;</span><br><span class="line"><span class="keyword">double</span> sum=<span class="number">0.0</span>,sumstudent=<span class="number">0.0</span>; <span class="comment">//总成绩，所有学生成绩</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;rows;i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;cols;j++)</span><br><span class="line">		score[i][j]=<span class="number">0.0</span>; <span class="comment">//初始化</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;rows;i++) <span class="comment">//遍历给每个学生输入成绩</span></span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;cols;j++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;input%dclass%dstudent\n&quot;</span>,i+<span class="number">1</span>,j+<span class="number">1</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%1f\n&quot;</span>,&amp;score[i][j]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><font size=4>可以只对部分元素赋值，未赋值的元素自动取0值</font></li>
-<li><font size=4>如果对全部元素赋值，第一维的长度可以不给</font></li>
-</ul>
-<h2 id="6-遍历二维数组："><a href="#6-遍历二维数组：" class="headerlink" title="6.遍历二维数组："></a>6.遍历二维数组：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">3</span>][<span class="number">3</span>]=&#123;&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">3</span>&#125;&#125;;</span><br><span class="line">	<span class="keyword">int</span> rows=<span class="keyword">sizeof</span>(<span class="built_in">map</span>)/<span class="keyword">sizeof</span>(<span class="built_in">map</span>[<span class="number">0</span>]);</span><br><span class="line">	<span class="comment">//sizeof(map)得到map数组的大小</span></span><br><span class="line">	<span class="comment">//sizeof(map[0])得到map中，第一行有多大</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;rows=%d\n&quot;</span>,rows);</span><br><span class="line">	<span class="keyword">int</span> cols=<span class="keyword">sizeof</span>(<span class="built_in">map</span>[<span class="number">0</span>])/<span class="keyword">sizeof</span>(<span class="built_in">map</span>[<span class="number">0</span>][<span class="number">0</span>]);<span class="comment">//12/4=3</span></span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;rows;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;cols;j++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="built_in">map</span>[i][j]);</span><br><span class="line">		&#125;<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
 
 
@@ -296,7 +369,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C语言88案例</a>
         		</li>
       		
 		</ul>
@@ -352,7 +425,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/10/31/Cfile05/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/10/31/ex001/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -366,18 +439,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2021/10/31/Cfile06/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/10/31/Cfile04/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          7.C语言_指针
+          5.C语言_数组
         
       </div>
     </a>
   
   
-    <a href="/2021/10/31/Cfile04/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">5.C语言_数组</div>
+    <a href="/2021/10/31/Cfile03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">4.C语言_预处理宏定义</div>
       <i class="icon-circle-right"></i>
     </a>
   
