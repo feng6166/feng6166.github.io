@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>21.寻找相同元素的指针 | 叶如晦</title>
+  <title>5.冯氏讲坛_冯氏小记01 | 叶如晦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 题目 函数：find() 功能：寻找相同元素的指针 描述：比较两个有序数组的元素，输出两个数组中第一个相同的值">
+  <meta name="description" content="事者难成易败，名者难立易废">
 <meta property="og:type" content="article">
-<meta property="og:title" content="21.寻找相同元素的指针">
-<meta property="og:url" content="http://example.com/2021/09/21/ex021/index.html">
+<meta property="og:title" content="5.冯氏讲坛_冯氏小记01">
+<meta property="og:url" content="http://example.com/2022/10/26/book06/index.html">
 <meta property="og:site_name" content="叶如晦">
-<meta property="og:description" content="1 题目 函数：find() 功能：寻找相同元素的指针 描述：比较两个有序数组的元素，输出两个数组中第一个相同的值">
+<meta property="og:description" content="事者难成易败，名者难立易废">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-21T06:54:39.000Z">
-<meta property="article:modified_time" content="2021-11-10T11:15:06.753Z">
+<meta property="article:published_time" content="2022-10-26T01:36:48.000Z">
+<meta property="article:modified_time" content="2022-10-26T15:49:34.484Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="C经典88案例">
+<meta property="article:tag" content="冯氏讲坛">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="叶如晦" type="application/atom+xml">
@@ -215,47 +215,36 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-ex021" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-book06" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      21.寻找相同元素的指针
+      5.冯氏讲坛_冯氏小记01
     </h1>
   
 
         
-        <a href="/2021/09/21/ex021/" class="archive-article-date">
-  	<time datetime="2021-09-21T06:54:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-21</time>
+        <a href="/2022/10/26/book06/" class="archive-article-date">
+  	<time datetime="2022-10-26T01:36:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
-<p>函数：find()</p>
-<p>功能：寻找相同元素的指针</p>
-<p>描述：比较两个有序数组的元素，输出两个数组中第一个相同的值</p>
-</blockquote>
-<span id="more"></span>
+        <h3 id="事者难成易败，名者难立易废"><a href="#事者难成易败，名者难立易废" class="headerlink" title="事者难成易败，名者难立易废"></a>事者难成易败，名者难立易废</h3><span id="more"></span>
+<font face="楷体" size=4 height=30>
+&emsp;&emsp;时至朔市，秋风呼啸，野草狂劲；孤以为心向神往，自在极意，怡然自得矣。<br/>
+&emsp;&emsp;初至学堂，俱是人潮涌动，乃探之，得所闻，心微思，尽是志大才疏之辈矣，无以作为；断之，事难为也。<br/>
+&emsp;&emsp;心有神意，隐而不晦；事者难成易败，名者难立易废；<br/>
 
 
 
-<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2 思路"></a>2 思路</h2><p>利用有序数组有序的特点</p>
-<p>建立一个指针函数，这个函数返回值为指针类型，即一个地址。定义如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> * <span class="title">find</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
 
-<p>在程序中调用该函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * p = find(a, b, <span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(a[<span class="number">0</span>]), <span class="keyword">sizeof</span>(b)/<span class="keyword">sizeof</span>(b[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure>
-
-<p>返回一个指向整型变量的指针</p>
-<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：find()</span></span><br><span class="line"><span class="comment">功能：寻找相同元素的指针</span></span><br><span class="line"><span class="comment">描述：比较两个有序数组的元素，输出两个数组中第一个相同的值</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> * <span class="title">find</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *pa = a; </span><br><span class="line">	<span class="keyword">int</span> *pb = b; </span><br><span class="line">	<span class="keyword">while</span>(pa &lt; a+m &amp;&amp; pb &lt; b+n) &#123;</span><br><span class="line">		<span class="keyword">if</span> (*pa &lt; *pb) &#123;</span><br><span class="line">			pa++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(*pa &gt; *pb) &#123;</span><br><span class="line">			pb++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> pa;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *p;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">34</span>,<span class="number">56</span>&#125;;		<span class="comment">// 声明两个数组</span></span><br><span class="line">	<span class="keyword">int</span> b[] = &#123;<span class="number">3</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">34</span>,<span class="number">59</span>&#125;;	<span class="comment">// 声明两个数组	</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;两个数组的内容分别是：\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(a[<span class="number">0</span>]); ++i) &#123; 	<span class="comment">// 打印数组</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, *(a+i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="keyword">sizeof</span>(b)/<span class="keyword">sizeof</span>(b[<span class="number">0</span>]); ++j) &#123; 	<span class="comment">// 打印数组</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, *(b+j));</span><br><span class="line">	&#125;</span><br><span class="line">	p = find(a, b, <span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(a[<span class="number">0</span>]), <span class="keyword">sizeof</span>(b)/<span class="keyword">sizeof</span>(b[<span class="number">0</span>]));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n相同的数字是：%d\n&quot;</span>, *p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>示例结果：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex021.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">两个数组的内容分别是：</span><br><span class="line">2 5 7 9 11 34 56</span><br><span class="line">3 6 8 10 12 34 59</span><br><span class="line">相同的数字是：34</span><br></pre></td></tr></table></figure>
+</font>
       
 
       
@@ -299,7 +288,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C经典88案例</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">冯氏讲坛</a>
         		</li>
       		
 		</ul>
@@ -355,7 +344,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/09/21/ex021/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/10/26/book06/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -369,18 +358,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2021/09/22/ex022/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          22.查找成绩不及格的学生
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/09/20/ex020/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">20.用指针函数输出学生成绩</div>
+    <a href="/2022/10/05/book05/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">5.冯氏讲坛_暂无标题</div>
       <i class="icon-circle-right"></i>
     </a>
   

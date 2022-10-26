@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav>
-    			总文章数 45
+    			总文章数 46
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -211,6 +211,102 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-ex016" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/16/ex016/">16.使用指向指针的指针对字符串排序</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/16/ex016/" class="archive-article-date">
+  	<time datetime="2021-09-16T06:54:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
+<p>函数：sort()</p>
+<p>功能：使用指向指针的指针对字符串排序</p>
+<p>描述：使用指向指针的指针对字符串排序，输出是按照字母顺序进行排序</p>
+</blockquote>
+<!--mors-->
+
+
+
+
+<h2 id="2-思路"><a href="#2-思路" class="headerlink" title="2 思路"></a>2 思路</h2><h5 id="a-熟悉指向指针的指针的使用"><a href="#a-熟悉指向指针的指针的使用" class="headerlink" title="a. 熟悉指向指针的指针的使用"></a>a. 熟悉指向指针的指针的使用</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *nums[]=&#123;<span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> **p;</span><br><span class="line">p = nums;</span><br></pre></td></tr></table></figure>
+
+<p>熟悉 *p 指向的是 nums[0] 的首地址</p>
+<h5 id="b-引用模块-include-lt-string-h-gt"><a href="#b-引用模块-include-lt-string-h-gt" class="headerlink" title="b. 引用模块#include &lt;string.h&gt;"></a>b. 引用模块#include &lt;string.h&gt;</h5><p>使用函数 int strcmp(const char *str1, const char *str2) 进行字符串的比较</p>
+<p>该函数返回值如下：</p>
+<ul>
+<li>如果返回值小于 0，则表示 str1 小于 str2。</li>
+<li>如果返回值大于 0，则表示 str1 大于 str2。</li>
+<li>如果返回值等于 0，则表示 str1 等于 str2。</li>
+</ul>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3 代码"></a>3 代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">函数：fun()</span></span><br><span class="line"><span class="comment">功能：使用指向指针的指针对字符串排序</span></span><br><span class="line"><span class="comment">描述：</span></span><br><span class="line"><span class="comment">使用指向指针的指针对字符串排序，输出是按照字母顺序进行排序</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">char</span> **p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *temp; 	<span class="comment">// 排序交换时的临时变量</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; N; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">strcmp</span>(*(p+i), *(p+j)) &gt; <span class="number">0</span>) &#123; 	<span class="comment">// 使用strcmp进行字符串的比较</span></span><br><span class="line">				temp = *(p+i);</span><br><span class="line">				*(p+i) = *(p+j);</span><br><span class="line">				*(p+j) = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123; </span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">5</span>; </span><br><span class="line">	<span class="keyword">char</span> **p;</span><br><span class="line">	<span class="keyword">char</span> *nums[] = &#123;</span><br><span class="line">		<span class="string">&quot;one&quot;</span>, <span class="string">&quot;two&quot;</span>, <span class="string">&quot;three&quot;</span>, <span class="string">&quot;four&quot;</span>, <span class="string">&quot;five&quot;</span>, <span class="string">&quot;six&quot;</span>, <span class="string">&quot;seven&quot;</span>, <span class="string">&quot;eight&quot;</span>, <span class="string">&quot;nine&quot;</span>, <span class="string">&quot;ten&quot;</span></span><br><span class="line">	&#125;;</span><br><span class="line">	p = nums;			<span class="comment">// 使用指向指针的指针指向字符串数组</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;排序前的数组内容为：\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%s &quot;</span>, *(p+i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	sort(p);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;排序后的数组内容为：\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%s &quot;</span>, *(p+i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>示例结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gcc ex016.c -o demo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./demo</span></span><br><span class="line">排序前的数组内容为：</span><br><span class="line">one two three four five six seven eight nine ten</span><br><span class="line">排序后的数组内容为：</span><br><span class="line">eight five four nine one seven six ten three two</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C经典88案例</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/16/ex016/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-ex015" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -883,84 +979,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/07/ex007/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ex006" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/06/ex006/">6.移动字符串中内容</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/06/ex006/" class="archive-article-date">
-  	<time datetime="2021-09-06T06:54:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><blockquote>
-<p>函数：fun()</p>
-<p>功能：移动字符串中内容</p>
-<p>描述：移动规则如下：把第1到第m个字符，平移到字符串的最后，把m+1到最后的字符移到字符串的前部</p>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C经典88案例</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/06/ex006/">展开全文 >></a>
         </p>
       
 
